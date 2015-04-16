@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>LoOnEyLu's Berlin Clock</title>
+
+	<script type="text/javascript" src="../../bower_components/angular/angular.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<style type="text/css">
+	.header{
+		background-color: gray;
+		text-align: center;
+	}
+	#berlinClock{
+		background-color: black;
+		border-radius: 10px 10px 10px 10px;
+	}
+	.secondsOn{
+		background-color: yellow;
+	}
+</style>
+<body ng-app="myAngularBerlinClockApp">
+
+	<script type="text/javascript" src="../Scripts/app.js"></script>
+
+	<div class="header">
+		<div class="container">
+			<h1>LoOnEyLu's AngularJS Berlin Clock</h1>
+		</div>
+	</div>
+	</br>
+	<div id="berlinClock" class="container" ng-controller="SecondsController">
+		<div ng-if="true" id="secondsOn" class="row">
+			<div class="ticker col-sm-12"></br></br></br></br></div>
+		</div>
+	</div>
+
+
+
+</body>
+</html>
