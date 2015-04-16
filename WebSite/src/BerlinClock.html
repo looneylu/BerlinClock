@@ -14,11 +14,12 @@
 		background-color: black;
 		border-radius: 10px 10px 10px 10px;
 	}
-	.secondsOn{
+	.yellow{
 		background-color: yellow;
+		border-radius: 10px 10px 10px 10px;
 	}
 </style>
-<body ng-app="myAngularBerlinClockApp">
+<body ng-app="BerlinClockApp">
 
 	<script type="text/javascript" src="../Scripts/app.js"></script>
 
@@ -29,11 +30,11 @@
 	</div>
 	</br>
 	<div id="berlinClock" class="container" ng-controller="SecondsController">
-		<div ng-if="true" id="secondsOn" class="row">
+		<div ng-class="{yellow: on}" id="secondsOn" class="row">
+
 			<div class="ticker col-sm-12"></br></br></br></br></div>
 		</div>
 	</div>
-
 
 
 </body>
