@@ -6,42 +6,15 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../Style/BerlinClock.css">
 </head>
 <style type="text/css">
-	.header{
-		background-color: gray;
-		text-align: center;
-	}
-	#berlinClock{
-		background-color:#FFDB58;
-		border-radius: 10px 10px 10px 10px;
-	}
-	.yellow{
-		height: 50px;
-		background-color: yellow;
-		border: 1px solid white;
-		border-radius: 00px 0px 0px 0px;
-	}
-	.red{
-		height: 50px;
-		background-color: red;
-	}
-	#secondsOn{
-		height: 50px;
-		border-radius: 10px 10px 0px 0px;
-	}
-	#ruby{
-		background-color: #9b111e;
-	}
-	.standard{
-		height: 50px;
-		border:1px solid white;
-	}
-	#time{
-		font-size: 25px;
-		font-weight: bold;
-		text-align: center;
-	}
+.header{
+	background-color: gray;
+	font-size: 25;
+	font-weight: bold;
+	text-align: center;
+}
 </style>
 <body ng-app="BerlinClockApp">
 
@@ -50,7 +23,7 @@
 			<h1>LoOnEyLu's AngularJS Berlin Clock</h1>
 		</div>
 	</div>
-	</br>
+	</br></br></nr>
 	<div id="berlinClock" class="container" ng-controller="timeController">
 		<div ng-class="{yellow: secondsLamp}" id="secondsOn" class="row">
 			<div class="ticker col-xs-12"></div>
@@ -61,7 +34,7 @@
 		<div id="ruby" class="row">
 			<div class="standard col-xs-3" ng-repeat="hour in singleHourLamps track by $index" ng-class="{red: hour == 'R'}"></div>
 		</div>
-		<div id="minutesOfFive" class="row">
+		<div id="minutesOfFive" class="row ">
 			<div class="standard col-xs-1" ng-repeat="fiveMinutes in fiveMinuteLamps track by $index" ng-class="{yellow: fiveMinutes == 'Y', red: fiveMinutes == 'R'}"></div>
 		</div>
 		<div id="minutes" class="row">

@@ -1,0 +1,36 @@
+<style type="text/css">
+	.header{
+		background-color: gray;
+		text-align: center;
+	}
+	#berlinClock{
+		background-color:#FFDB58;
+		border-radius: 10px 10px 10px 10px;
+	}
+	.yellow{
+		height: 50px;
+		background-color: yellow;
+		border: 1px solid white;
+		border-radius: 00px 0px 0px 0px;
+	}
+	.red{
+		height: 50px;
+		background-color: red;
+	}
+	#secondsOn{
+		height: 50px;
+		border-radius: 10px 10px 0px 0px;
+	}
+	#ruby{
+		background-color: #9b111e;
+	}
+	.standard{
+		height: 50px;
+		border:1px solid white;
+	}
+	#time{
+		font-size: 25px;
+		font-weight: bold;
+		text-align: center;
+	}
+</style>
