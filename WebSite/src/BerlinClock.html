@@ -48,6 +48,9 @@
 	#time{
 		text-align: center;
 	}
+	.blue{
+		background-color: blue;
+	}
 </style>
 <body ng-app="BerlinClockApp">
 	<script type="text/javascript" src="../Scripts/BerlinClock.js"></script>
@@ -59,7 +62,7 @@
 		</div>
 	</div>
 	</br>
-	<div id="berlinClock" class="container" ng-controller="SecondsController">
+	<div id="berlinClock" class="container" ng-controller="timeController">
 		<div ng-class="{yellow: secondsLamp}" id="secondsOn" class="row">
 			<div class="ticker col-sm-12"></div>
 		</div>
