@@ -42,5 +42,5 @@ var turnOnLamps = function(number, characterToUse, template){
 			return characterToUse(i+1);
 		} else
 			return 'O';
-	}).join("");
+	});
 }
