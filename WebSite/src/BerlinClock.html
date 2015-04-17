@@ -4,6 +4,7 @@
 
 	<script type="text/javascript" src="../../bower_components/angular/angular.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 <style type="text/css">
 	.header{
@@ -11,16 +12,41 @@
 		text-align: center;
 	}
 	#berlinClock{
-		background-color: black;
+		background-color:#FFDB58;
 		border-radius: 10px 10px 10px 10px;
 	}
 	.yellow{
 		height: 40px;
 		background-color: yellow;
-		border-radius: 10px 10px 10px 10px;
+		border: 1px solid white;
+		border-radius: 10px 10px 0px 0px;
 	}
 	#secondsOn{
 		height: 40px;
+	}
+
+	.fivehours{
+		height:40px;
+		background-color: red;
+		border:1px solid white;
+	}
+	.singleHours{
+		height:40px;
+		background-color: red;
+		border:1px solid white;
+	}
+	.minutesOfFive{
+		height: 40px;
+		background-color: yellow;
+		border:1px solid white;
+	}
+	.minutes{
+		height: 40px;
+		background-color: yellow;
+		border:1px solid white;
+	}
+	#time{
+		text-align: center;
 	}
 </style>
 <body ng-app="BerlinClockApp">
@@ -34,11 +60,40 @@
 	</div>
 	</br>
 	<div id="berlinClock" class="container" ng-controller="SecondsController">
-		<div ng-class="{yellow: on}" id="secondsOn" class="row">
+		<div ng-class="{yellow: secondsLamp}" id="secondsOn" class="row">
 			<div class="ticker col-sm-12"></div>
 		</div>
-	</div>
-
-
+		<div id="hoursOfFive" class="row">
+		    <div class="fiveHours col-sm-3">{{fiveHourLamps}}</div>
+		    <div class="fiveHours col-sm-3"></div>
+		    <div class="fiveHours col-sm-3"></div>
+		    <div class="fiveHours col-sm-3"></div>
+		</div>
+		<div id="hours" class="row">
+			<div class="singleHours col-sm-3">{{singleHourLamps}}</div>
+			<div class="singleHours col-sm-3"></div>
+			<div class="singleHours col-sm-3"></div>
+			<div class="singleHours col-sm-3"></div>
+		</div>
+		<div id="minutesOfFive" class="row">
+			<div class="minutesOfFive col-sm-1">{{fiveMinuteLamps}}</div>
+			<div class="minutesOfFive col-sm-1"></div>
+			<div class="minutesOfFive col-sm-1"></div>
+			<div class="minutesOfFive col-sm-1"></div>
+			<div class="minutesOfFive col-sm-1"></div>
+			<div class="minutesOfFive col-sm-1"></div>
+			<div class="minutesOfFive col-sm-1"></div>
+			<div class="minutesOfFive col-sm-1"></div>
+			<div class="minutesOfFive col-sm-1"></div>
+			<div class="minutesOfFive col-sm-1"></div>
+			<div class="minutesOfFive col-sm-1"></div>		
+		</div>
+		<div id="minutes" class="row">
+			<div class="minutes col-sm-3">{{minuteLamps}}</div>
+			<div class="minutes col-sm-3"></div>
+			<div class="minutes col-sm-3"></div>
+			<div class="minutes col-sm-3"></div>
+		</div>
+		<div id="time" class>{{timeString | date: 'HH:mm:ss'}}</div>
 </body>
 </html>
