@@ -20,7 +20,7 @@
 		height: 40px;
 		background-color: yellow;
 		border: 1px solid white;
-		border-radius: 10px 10px 0px 0px;
+		border-radius: 00px 0px 0px 0px;
 	}
 	.red{
 		height: 40px;
@@ -28,35 +28,17 @@
 	}
 	#secondsOn{
 		height: 40px;
+		border-radius: 10px 10px 0px 0px;
 	}
-	#hoursOfFive{
+	#ruby{
 		background-color: #9b111e;
 	}
-
-	#hours{
-		background-color: #9b111e;
-	}
-	.fivehours{
-		height:40px;
-		border:1px solid white;
-	}
-	.singleHours{
-		height:40px;
-		border:1px solid white;
-	}
-	.minutesOfFive{
-		height: 40px;
-		border:1px solid white;
-	}
-	.minutes{
+	.standard{
 		height: 40px;
 		border:1px solid white;
 	}
 	#time{
 		text-align: center;
-	}
-	.blue{
-		background-color: blue;
 	}
 </style>
 <body ng-app="BerlinClockApp">
@@ -71,34 +53,17 @@
 		<div ng-class="{yellow: secondsLamp}" id="secondsOn" class="row">
 			<div class="ticker col-sm-12"></div>
 		</div>
-		<div id="hoursOfFive" class="row">
-			<div class="fiveHours col-sm-3" ng-repeat="fiveHour in fiveHourLamps track by $index" ng-class="{red: fiveHour == 'R'}"></div>
+		<div id="ruby" class="row">
+			<div class="standard col-sm-3" ng-repeat="fiveHour in fiveHourLamps track by $index" ng-class="{red: fiveHour == 'R'}"></div>
 		</div>
-
-		<div id="hours" class="row">
-			<div class="singleHours col-sm-3" ng-repeat="hour in singleHourLamps track by $index" ng-class="{red: hour == 'R'}"></div>
+		<div id="ruby" class="row">
+			<div class="standard col-sm-3" ng-repeat="hour in singleHourLamps track by $index" ng-class="{red: hour == 'R'}"></div>
 		</div>
-<!--		<div id="minutesOfFive" class="row">
-			<div class="minutesOfFive col-sm-1">{{fiveMinuteLamps}}</div>
-			<div class="minutesOfFive col-sm-1"></div>
-			<div class="minutesOfFive col-sm-1"></div>
-			<div class="minutesOfFive col-sm-1"></div>
-			<div class="minutesOfFive col-sm-1"></div>
-			<div class="minutesOfFive col-sm-1"></div>
-			<div class="minutesOfFive col-sm-1"></div>
-			<div class="minutesOfFive col-sm-1"></div>
-			<div class="minutesOfFive col-sm-1"></div>
-			<div class="minutesOfFive col-sm-1"></div>
-			<div class="minutesOfFive col-sm-1"></div>		
-		</div> -->
-
 		<div id="minutesOfFive" class="row">
-			<div class="minutesOfFive col-sm-1" ng-repeat="fiveMinutes in fiveMinuteLamps track by $index" ng-class="{yellow: fiveMinutes == 'Y', red: fiveMinutes == 'R'}"></div>
+			<div class="standard col-sm-1" ng-repeat="fiveMinutes in fiveMinuteLamps track by $index" ng-class="{yellow: fiveMinutes == 'Y', red: fiveMinutes == 'R'}"></div>
 		</div>
-
-
 		<div id="minutes" class="row">
-			<div class="minutes col-sm-3" ng-repeat="minute in minuteLamps track by $index" ng-class="{yellow: (minute == 'Y')}"></div>
+			<div class="standard col-sm-3" ng-repeat="minute in minuteLamps track by $index" ng-class="{yellow: (minute == 'Y')}"></div>
 		</div>
  		<div id="time" class>{{timeString | date: 'HH:mm:ss'}}</div>
 
