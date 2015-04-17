@@ -17,24 +17,24 @@
 		border-radius: 10px 10px 10px 10px;
 	}
 	.yellow{
-		height: 40px;
+		height: 50px;
 		background-color: yellow;
 		border: 1px solid white;
 		border-radius: 00px 0px 0px 0px;
 	}
 	.red{
-		height: 40px;
+		height: 50px;
 		background-color: red;
 	}
 	#secondsOn{
-		height: 40px;
+		height: 50px;
 		border-radius: 10px 10px 0px 0px;
 	}
 	#ruby{
 		background-color: #9b111e;
 	}
 	.standard{
-		height: 40px;
+		height: 50px;
 		border:1px solid white;
 	}
 	#time{
@@ -51,19 +51,19 @@
 	</br>
 	<div id="berlinClock" class="container" ng-controller="timeController">
 		<div ng-class="{yellow: secondsLamp}" id="secondsOn" class="row">
-			<div class="ticker col-sm-12"></div>
+			<div class="ticker col-xs-12"></div>
 		</div>
 		<div id="ruby" class="row">
-			<div class="standard col-sm-3" ng-repeat="fiveHour in fiveHourLamps track by $index" ng-class="{red: fiveHour == 'R'}"></div>
+			<div class="standard col-xs-3" ng-repeat="fiveHour in fiveHourLamps track by $index" ng-class="{red: fiveHour == 'R'}"></div>
 		</div>
 		<div id="ruby" class="row">
-			<div class="standard col-sm-3" ng-repeat="hour in singleHourLamps track by $index" ng-class="{red: hour == 'R'}"></div>
+			<div class="standard col-xs-3" ng-repeat="hour in singleHourLamps track by $index" ng-class="{red: hour == 'R'}"></div>
 		</div>
 		<div id="minutesOfFive" class="row">
-			<div class="standard col-sm-1" ng-repeat="fiveMinutes in fiveMinuteLamps track by $index" ng-class="{yellow: fiveMinutes == 'Y', red: fiveMinutes == 'R'}"></div>
+			<div class="standard col-xs-1" ng-repeat="fiveMinutes in fiveMinuteLamps track by $index" ng-class="{yellow: fiveMinutes == 'Y', red: fiveMinutes == 'R'}"></div>
 		</div>
 		<div id="minutes" class="row">
-			<div class="standard col-sm-3" ng-repeat="minute in minuteLamps track by $index" ng-class="{yellow: (minute == 'Y')}"></div>
+			<div class="standard col-xs-3" ng-repeat="minute in minuteLamps track by $index" ng-class="{yellow: (minute == 'Y')}"></div>
 		</div>
  		<div id="time" class>{{timeString | date: 'HH:mm:ss'}}</div>
 

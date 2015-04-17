@@ -1,7 +1,6 @@
 
 var myAngularBerlinClockApp = new angular.module("BerlinClockApp", []);
 
-
 myAngularBerlinClockApp.controller('timeController', ['$scope', '$interval', function($scope, $interval){
 
 	$interval(function(){
@@ -12,8 +11,6 @@ myAngularBerlinClockApp.controller('timeController', ['$scope', '$interval', fun
 		$scope.fiveMinuteLamps = fifthMinutesTime(time).split("");
 		$scope.minuteLamps = singleMinutesTime(time).split("");
 		$scope.timeString = time; 
-
-		updateMinutes(minuteLamps.split("")); 
 		}, 1000
 	);
 }])
