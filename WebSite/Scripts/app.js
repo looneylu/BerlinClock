@@ -6,16 +6,11 @@ myAngularBerlinClockApp.controller('timeController', ['$scope', '$interval', fun
 
 	$interval(function(){
 		time = new Date();
-		secondsOn = secondsTime(time);
-		$scope.secondsLamp = secondsOn;
-		fiveHourLamps = fifthHoursTime(time);
-		$scope.fiveHourLamps = fiveHourLamps.split("");
-		singleHourLamps = singleHoursTime(time);
-		$scope.singleHourLamps = singleHourLamps.split(""); 
-		minutesOfFiveLamps = fifthMinutesTime(time);
-		$scope.fiveMinuteLamps = minutesOfFiveLamps.split("");
-		minuteLamps = singleMinutesTime(time);
-		$scope.minuteLamps = minuteLamps.split("");
+		$scope.secondsLamp = secondsTime(time);
+		$scope.fiveHourLamps = fifthHoursTime(time).split(""); 
+		$scope.singleHourLamps = singleHoursTime(time).split("");
+		$scope.fiveMinuteLamps = fifthMinutesTime(time).split("");
+		$scope.minuteLamps = singleMinutesTime(time).split("");
 		$scope.timeString = time; 
 
 		updateMinutes(minuteLamps.split("")); 
