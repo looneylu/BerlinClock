@@ -1,10 +1,11 @@
 <html>
 <head>
 	<title>LoOnEyLu's Berlin Clock</title>
-
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script type="text/javascript" src="../../bower_components/angular/angular.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 </head>
 <style type="text/css">
 	.header{
@@ -21,28 +22,34 @@
 		border: 1px solid white;
 		border-radius: 10px 10px 0px 0px;
 	}
+	.red{
+		height: 40px;
+		background-color: red;
+	}
 	#secondsOn{
 		height: 40px;
 	}
+	#hoursOfFive{
+		background-color: #9b111e;
+	}
 
+	#hours{
+		background-color: #9b111e;
+	}
 	.fivehours{
 		height:40px;
-		background-color: red;
 		border:1px solid white;
 	}
 	.singleHours{
 		height:40px;
-		background-color: red;
 		border:1px solid white;
 	}
 	.minutesOfFive{
 		height: 40px;
-		background-color: yellow;
 		border:1px solid white;
 	}
 	.minutes{
 		height: 40px;
-		background-color: yellow;
 		border:1px solid white;
 	}
 	#time{
@@ -53,8 +60,6 @@
 	}
 </style>
 <body ng-app="BerlinClockApp">
-	<script type="text/javascript" src="../Scripts/BerlinClock.js"></script>
-	<script type="text/javascript" src="../Scripts/app.js"></script>
 
 	<div class="header">
 		<div class="container">
@@ -67,18 +72,13 @@
 			<div class="ticker col-sm-12"></div>
 		</div>
 		<div id="hoursOfFive" class="row">
-		    <div class="fiveHours col-sm-3">{{fiveHourLamps}}</div>
-		    <div class="fiveHours col-sm-3"></div>
-		    <div class="fiveHours col-sm-3"></div>
-		    <div class="fiveHours col-sm-3"></div>
+			<div class="fiveHours col-sm-3" ng-repeat="fiveHour in fiveHourLamps track by $index" ng-class="{red: fiveHour == 'R'}"></div>
 		</div>
+
 		<div id="hours" class="row">
-			<div class="singleHours col-sm-3">{{singleHourLamps}}</div>
-			<div class="singleHours col-sm-3"></div>
-			<div class="singleHours col-sm-3"></div>
-			<div class="singleHours col-sm-3"></div>
+			<div class="singleHours col-sm-3" ng-repeat="hour in singleHourLamps track by $index" ng-class="{red: hour == 'R'}"></div>
 		</div>
-		<div id="minutesOfFive" class="row">
+<!--		<div id="minutesOfFive" class="row">
 			<div class="minutesOfFive col-sm-1">{{fiveMinuteLamps}}</div>
 			<div class="minutesOfFive col-sm-1"></div>
 			<div class="minutesOfFive col-sm-1"></div>
@@ -90,13 +90,20 @@
 			<div class="minutesOfFive col-sm-1"></div>
 			<div class="minutesOfFive col-sm-1"></div>
 			<div class="minutesOfFive col-sm-1"></div>		
+		</div> -->
+
+		<div id="minutesOfFive" class="row">
+			<div class="minutesOfFive col-sm-1" ng-repeat="fiveMinutes in fiveMinuteLamps track by $index" ng-class="{yellow: fiveMinutes == 'Y', red: fiveMinutes == 'R'}"></div>
 		</div>
+
+
 		<div id="minutes" class="row">
-			<div class="minutes col-sm-3">{{minuteLamps}}</div>
-			<div class="minutes col-sm-3"></div>
-			<div class="minutes col-sm-3"></div>
-			<div class="minutes col-sm-3"></div>
+			<div class="minutes col-sm-3" ng-repeat="minute in minuteLamps track by $index" ng-class="{yellow: (minute == 'Y')}"></div>
 		</div>
-		<div id="time" class>{{timeString | date: 'HH:mm:ss'}}</div>
+ 		<div id="time" class>{{timeString | date: 'HH:mm:ss'}}</div>
+
+	<script type="text/javascript" src="../Scripts/BerlinClock.js"></script>
+	<script type="text/javascript" src="../Scripts/app.js"></script>
+	<script type="text/javascript" src="../Scripts/ClockElements.js"></script>
 </body>
 </html>
