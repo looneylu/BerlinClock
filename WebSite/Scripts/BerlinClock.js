@@ -9,7 +9,7 @@ var singleMinutesTime = function(date){
 	var minutes = date.getMinutes();
 	var numberOfSingleMinutes = minutes % 5;
 
-	return turnOnLamps(numberOfSingleMinutes, function(){ return 'Y'; });
+	return turnOnLamps(numberOfSingleMinutes, function(){ return 'Y'; }).join("");
 }
 
 var fifthMinutesTime = function(date){
@@ -18,14 +18,14 @@ var fifthMinutesTime = function(date){
 
 	return turnOnLamps(numberOfFives, function(currentElement){
 			return (currentElement % 3 == 0) ? 'R' : 'Y';
-	}, "OOOOOOOOOOO")
+	}, "OOOOOOOOOOO").join("");
 }
 
 var singleHoursTime = function(date){
 	var hours = date.getHours();
 	var numberOfSingleHours = hours % 5;  
 
-	return turnOnLamps(numberOfSingleHours, function(){ return 'R'; });
+	return turnOnLamps(numberOfSingleHours, function(){ return 'R'; }).join("");
 
 }
 
@@ -33,7 +33,7 @@ var fifthHoursTime = function(date){
 	var fifthHours = date.getHours();
 	var numberOfFifthHours = fifthHours / 5;
 
-	return turnOnLamps(numberOfFifthHours, function(){ return 'R'; });
+	return turnOnLamps(numberOfFifthHours, function(){ return 'R'; }).join("");
 }
 
 var turnOnLamps = function(number, characterToUse, template){
