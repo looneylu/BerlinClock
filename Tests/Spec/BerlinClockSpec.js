@@ -13,35 +13,35 @@ describe('Displaying seconds', function(){
 });
 
 describe('Displaying single minutes', function(){
-	it ('Should turn on 1 when remainder of minutes when divided by five is 1', function(){
+	it ('Should turn on 1 when remainder of minutes divided by five is 1', function(){
 		var singleMinutes = new Date(1985, 09, 07, 12, 31, 24);
 		expect(singleMinutesTime(singleMinutes)).toBe("YOOO");
 	});
 });
 
 describe('Displaying singleMinutes', function(){
-	it('Should turn on 2 when remainder of minutes when divided by 5 is 2', function(){
+	it('Should turn on 2 when remainder of minutes divided by 5 is 2', function(){
 		var singleMinutes = new Date(1985, 09, 07,12, 32, 24);
 		expect(singleMinutesTime(singleMinutes)).toBe("YYOO");
 	});
 });
 
 describe('Displaying singleMinutes', function(){
-	it('Should turn on 3 when remainder of minutes when divided by 5 is 3', function(){
+	it('Should turn on 3 when remainder of minutes divided by 5 is 3', function(){
 		var singleMinutes = new Date(1985, 09, 07,12, 33, 24);
 		expect(singleMinutesTime(singleMinutes)).toBe("YYYO");
 	});
 });
 
 describe('Displaying singleMinutes', function(){
-	it('Should turn on 4 when remainder of minutes when divided by 5 is 4', function(){
+	it('Should turn on 4 when remainder of minutes divided by 5 is 4', function(){
 		var singleMinutes = new Date(1985, 09, 07,12, 34, 24);
 		expect(singleMinutesTime(singleMinutes)).toBe("YYYY");
 	});
 });
 
 describe('Displaying singleMinutes', function(){
-	it('Should be off when remainder of minutes when divided by 5 is 0', function(){
+	it('Should be off when remainder of minutes divided by 5 is 0', function(){
 		var singleMinutes = new Date(1985, 09, 07,12, 35, 24);
 		expect(singleMinutesTime(singleMinutes)).toBe("OOOO");
 	});
@@ -132,28 +132,28 @@ describe('Displaying fifthMinutes', function(){
 });
 
 describe('Displaying singleHours', function(){
-	it('Should turn on 1 when remainder of hours when divided by 5 is 1', function(){
+	it('Should turn on 1 when remainder of hours divided by 5 is 1', function(){
 		var singleHours = new Date(1985, 09, 07, 01, 12, 26);
 		expect(singleHoursTime(singleHours)).toBe("ROOO");
 	})
 });
 
 describe('Displaying singleHours', function(){
-	it('Should turn on 2 when remainder of hours when divided by 5 is 2', function(){
+	it('Should turn on 2 when remainder of hours divided by 5 is 2', function(){
 		var singleHours = new Date(1985, 09, 07, 07, 12, 26);
 		expect(singleHoursTime(singleHours)).toBe("RROO");
 	})
 });
 
 describe('Displaying singleHours', function(){
-	it('Should turn on 3 when remainder of hours when divided by 5 is 3', function(){
+	it('Should turn on 3 when remainder of hours divided by 5 is 3', function(){
 		var singleHours = new Date(1985, 09, 07, 13, 12, 26);
 		expect(singleHoursTime(singleHours)).toBe("RRRO");
 	})
 });
 
 describe('Displaying singleHours', function(){
-	it('Should turn on 4 when remainder of hours when divided by 5 is 4', function(){
+	it('Should turn on 4 when remainder of hours divided by 5 is 4', function(){
 		var singleHours = new Date(1985, 09, 07, 19, 12, 26);
 		expect(singleHoursTime(singleHours)).toBe("RRRR");
 	})

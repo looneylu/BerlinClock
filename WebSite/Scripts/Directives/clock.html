@@ -1,0 +1,16 @@
+<div ng-class="{yellow: secondsLamp}" id="secondsOn" class="row">
+    <div class="ticker col-xs-12"></div>
+</div>
+<div id="ruby" class="row">
+    <div class="standard col-xs-3" ng-repeat="fiveHour in fiveHourLamps track by $index" ng-class="{red: fiveHour == 'R'}"></div>
+</div>
+<div id="ruby" class="row">
+    <div class="standard col-xs-3" ng-repeat="hour in singleHourLamps track by $index" ng-class="{red: hour == 'R'}"></div>
+</div>
+<div id="minutesOfFive" class="row ">
+    <div class="standard col-xs-1" ng-repeat="fiveMinutes in fiveMinuteLamps track by $index" ng-class="{yellow: fiveMinutes == 'Y', red: fiveMinutes == 'R'}"></div>
+</div>
+<div id="minutes" class="row">
+    <div class="standard col-xs-3" ng-repeat="minute in minuteLamps track by $index" ng-class="{yellow: (minute == 'Y')}"></div>
+</div>
+<div id="time" class>{{timeString | date: 'shortTime'}}</div>

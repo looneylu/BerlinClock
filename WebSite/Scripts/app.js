@@ -1,19 +1,14 @@
 
-var myAngularBerlinClockApp = new angular.module("BerlinClockApp", []);
+var myAngularBerlinClockApp = new angular.module("BerlinClockApp", ['ngRoute']);
 
-myAngularBerlinClockApp.controller('timeController', ['$scope', '$interval', function($scope, $interval){
-
-	$interval(function(){
-		time = new Date();
-		$scope.secondsLamp = secondsTime(time);
-		$scope.fiveHourLamps = fifthHoursTime(time).split(""); 
-		$scope.singleHourLamps = singleHoursTime(time).split("");
-		$scope.fiveMinuteLamps = fifthMinutesTime(time).split("");
-		$scope.minuteLamps = singleMinutesTime(time).split("");
-		$scope.timeString = time; 
-		}, 1000
-	);
-}])
+myAngularBerlinClockApp.config(function($routeProvider){
+    $routeProvider
+        .when('/', {
+            controller: 'timeController',
+            templateUrl: '../views/BerlinRoute.html'
+        })
+        .otherwise({redirectTo:'/'});
+});
 
 
 

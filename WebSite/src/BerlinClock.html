@@ -4,7 +4,7 @@
  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script type="text/javascript" src="../../bower_components/angular/angular.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../Style/BerlinClock.css">
 </head>
@@ -24,25 +24,14 @@
 		</div>
 	</div>
 	</br></br></nr>
-	<div id="berlinClock" class="container" ng-controller="timeController">
-		<div ng-class="{yellow: secondsLamp}" id="secondsOn" class="row">
-			<div class="ticker col-xs-12"></div>
-		</div>
-		<div id="ruby" class="row">
-			<div class="standard col-xs-3" ng-repeat="fiveHour in fiveHourLamps track by $index" ng-class="{red: fiveHour == 'R'}"></div>
-		</div>
-		<div id="ruby" class="row">
-			<div class="standard col-xs-3" ng-repeat="hour in singleHourLamps track by $index" ng-class="{red: hour == 'R'}"></div>
-		</div>
-		<div id="minutesOfFive" class="row ">
-			<div class="standard col-xs-1" ng-repeat="fiveMinutes in fiveMinuteLamps track by $index" ng-class="{yellow: fiveMinutes == 'Y', red: fiveMinutes == 'R'}"></div>
-		</div>
-		<div id="minutes" class="row">
-			<div class="standard col-xs-3" ng-repeat="minute in minuteLamps track by $index" ng-class="{yellow: (minute == 'Y')}"></div>
-		</div>
- 		<div id="time" class>{{timeString | date: 'HH:mm:ss'}}</div>
+	<div id="berlinClock" class="container" >
+		<div ng-view></div>
+	</div>
 
 	<script type="text/javascript" src="../Scripts/BerlinClock.js"></script>
 	<script type="text/javascript" src="../Scripts/app.js"></script>
+	<script type="text/javascript" src="../Scripts/Controllers/TimeController.js"></script>
+	<script type="text/javascript" src="../Scripts/Directives/clock.js"></script>
+
 </body>
 </html>
